@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefHeight="122.0" prefWidth="333.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.minevn.questeditor.controller.MainController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+    <Label fx:id="welcomeText" text="sussy baka" />
+   <HBox alignment="CENTER" prefHeight="19.0" prefWidth="293.0" style="-fx-spacing: 20;">
+      <children>
+          <Button alignment="CENTER" onAction="#onNewFileClick" text="Tạo ssss mới" textAlignment="CENTER" />
+          <Button alignment="CENTER" mnemonicParsing="false" text="Button" textAlignment="CENTER" />
+      </children>
+      <opaqueInsets>
+         <Insets />
+      </opaqueInsets>
+   </HBox>
+</VBox>
