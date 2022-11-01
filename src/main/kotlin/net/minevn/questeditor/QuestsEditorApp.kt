@@ -7,14 +7,16 @@ import javafx.scene.image.Image
 import javafx.stage.Stage
 
 class QuestsEditorApp : Application() {
-	override fun start(stage: Stage) {
-		QuestsEditorApp.stage = stage
-		val fxmlLoader = FXMLLoader(QuestsEditorApp::class.java.getResource("main.fxml"))
+	override fun start(window: Stage) {
+		stage = window
+		val fxmlLoader = FXMLLoader(QuestsEditorApp::class.java.getResource("editor.fxml"))
 		val scene = Scene(fxmlLoader.load())
-		stage.title = "QuestsEditor"
-		stage.icons.add(Image("icon.jpg"))
-		stage.scene = scene
-		stage.show()
+		window.title = "QuestsEditor"
+		window.icons.add(Image("icon.jpg"))
+		window.scene = scene
+		window.isMaximized = true
+		window.resizableProperty().set(true)
+		window.show()
 	}
 
 	companion object {

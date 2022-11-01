@@ -1,22 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" prefHeight="122.0" prefWidth="333.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.minevn.questeditor.controller.MainController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-    </padding>
-
-    <Label fx:id="welcomeText" text="sussy baka" />
-   <HBox alignment="CENTER" prefHeight="19.0" prefWidth="293.0" style="-fx-spacing: 20;">
-      <children>
-          <Button alignment="CENTER" onAction="#onNewFileClick" text="Tạo ssss mới" textAlignment="CENTER" />
-          <Button alignment="CENTER" mnemonicParsing="false" text="Button" textAlignment="CENTER" />
-      </children>
-      <opaqueInsets>
-         <Insets />
-      </opaqueInsets>
-   </HBox>
-</VBox>
+<BorderPane prefHeight="575.0" prefWidth="1023.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.minevn.questeditor.controller.MainController">
+   <center>
+       <TabPane prefHeight="880.0" prefWidth="1000.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+           <Tab fx:id="addQuest" closable="false" onSelectionChanged="#addQuest" text="Add...">
+               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="539.0" prefWidth="721.0">
+                    <ChoiceBox layoutX="27.0" layoutY="43.0" prefWidth="150.0" />
+                    <CheckBox layoutX="27.0" layoutY="333.0" mnemonicParsing="false" text="CheckBox" />
+                    <TextField layoutX="27.0" layoutY="18.0" promptText="Quest name" />
+                    <TextArea fx:id="lore" layoutX="27.0" layoutY="153.0" prefHeight="160.0" prefWidth="730.0" promptText="Lore..." />
+                   <TextArea layoutX="27.0" layoutY="393.0" prefHeight="60.0" prefWidth="730.0" promptText="Done messages" />
+                    <Button layoutX="719.0" layoutY="482.0" mnemonicParsing="false" text="Add" />
+               </AnchorPane>
+           </Tab>
+       </TabPane>
+   </center>
+   <left>
+      <TreeView fx:id="treeView" editable="true" prefHeight="495.0" prefWidth="250.0" BorderPane.alignment="TOP_LEFT" />
+   </left>
+   <top>
+       <MenuBar BorderPane.alignment="CENTER">
+           <Menu mnemonicParsing="false" text="File">
+               <MenuItem mnemonicParsing="false" onAction="#loadFile" text="Open" />
+               <MenuItem mnemonicParsing="false" onAction="#saveFile" text="Save" />
+               <MenuItem mnemonicParsing="false" onAction="#close" text="Close" />
+           </Menu>
+           <Menu mnemonicParsing="false" text="Edit">
+               <MenuItem mnemonicParsing="false" text="Delete" />
+           </Menu>
+           <Menu mnemonicParsing="false" text="Help">
+               <MenuItem mnemonicParsing="false" text="About" />
+           </Menu>
+       </MenuBar>
+   </top>
+</BorderPane>

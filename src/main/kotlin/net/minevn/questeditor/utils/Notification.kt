@@ -4,6 +4,7 @@ import javafx.event.EventHandler
 import javafx.scene.control.Label
 import javafx.stage.Popup
 import javafx.stage.Stage
+import net.minevn.questeditor.QuestsEditorApp
 
 fun createPopup(message: String?): Popup {
 	val popup = Popup()
@@ -18,7 +19,7 @@ fun createPopup(message: String?): Popup {
 	return popup
 }
 
-fun showPopupMessage(message: String?, stage: Stage) {
+fun showPopupMessage(message: String?, stage: Stage = QuestsEditorApp.stage) {
 	val popup: Popup = createPopup(message)
 	popup.onShown = EventHandler {
 		popup.x = stage.x + stage.width / 2 - popup.width / 2
